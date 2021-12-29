@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react/cjs/react.development'
 import Add from './Add'
 import Delete from './Delete'
 import Display from './Display'
-import States from './States'
-import Update from './Update'
+// import States from './States'
+// import Update from './Update'
 
 function Body() {
     const [data, setData] = useState(JSON.parse(localStorage.getItem('add')) || []);
@@ -29,11 +29,11 @@ function Body() {
 
     return (
         <div className='Body'>
-            <Add state={setData}/>
-            <Display data={data}/>
+            {/* <Add state={setData}/>
+            <Display data={data}/> */}
             {/* <Update /> */}
             {/* <States /> */}
-            {/* <Delete /> */}
+            <Delete />
         </div>
     )
 }
