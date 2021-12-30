@@ -21,9 +21,11 @@
 
 .fa-plus,
 .ic {
+    background-color: whitesmoke;
     color: black;
     padding: 5px;
     border-radius: 21px;
+    border: 2px solid white;
 }
 
 .fa-plus:hover,
@@ -39,6 +41,8 @@ div.all-icons {
     width: 100%;
     display: inline-flex;
     flex-direction: row;
+    padding: 0px;
+    margin: 0px;
 }
 
 .span-ic {

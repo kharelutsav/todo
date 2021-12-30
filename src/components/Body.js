@@ -30,7 +30,7 @@ function Body() {
     return (
         <div className='Body'>
             <Add state={setData}/>
-            <Display data={data}/>
+            <Display state={[data, setData]}/>
             {/* <Update /> */}
             {/* <States /> */}
             {/* <Delete /> */}
