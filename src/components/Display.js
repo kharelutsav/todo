@@ -2,14 +2,18 @@ import React from 'react'
 import '../css/display.css'
 import { FaMinus, FaEdit, FaPlus } from 'react-icons/fa'
 import { MdOutlineDownloadDone } from 'react-icons/md'
-// import { FcExpired } from 'react-icons/fc'
 
 function Display(props) {
     const [data, setData] = props.state;
 
     const removeData = (e) => {
         setData(data => {
-            data.splice(e.target.getAttribute('value'), 1)
+            const index = e.target.getAttribute('value')
+            let rec = [...data]
+            if (index){
+                rec.splice(index, 1)
+                return [...rec]
+            }
             return [...data]
         })
     }
@@ -31,7 +35,6 @@ function Display(props) {
                             <span className='span-ic'>
                                 <MdOutlineDownloadDone className='md-done icons ic' value={index}/>
                             </span>
-                                {/* <FcExpired className='fc-exp icons'/> */}
                         </div>                      
                         <p className='todo-name'>{rec[0]}</p>
                         <p className='other-text'>{rec[1]} {rec[2]}</p>

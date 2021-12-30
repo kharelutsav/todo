@@ -24,12 +24,10 @@ function Body() {
     })
 
     window.addEventListener('storage', ()=>console.log(localStorage.getItem('add')))
-    
-    // const deleteData = () => {}
 
     return (
         <div className='Body'>
-            <Add state={setData}/>
+            {/* <Add state={setData}/> */}
             <Display state={[data, setData]}/>
             {/* <Update /> */}
             {/* <States /> */}
