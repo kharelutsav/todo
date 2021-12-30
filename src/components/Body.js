@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useEffect } from 'react/cjs/react.development'
 import Add from './Add'
 // import Delete from './Delete'
@@ -8,6 +7,7 @@ import Display from './Display'
 
 function Body() {
     const [data, setData] = useState(JSON.parse(localStorage.getItem('add')) || []);
+    const [portal, setPortal] = useState('Display')
 
     useEffect(() => {
         localStorage.setItem('add', JSON.stringify(data))
@@ -27,11 +27,9 @@ function Body() {
 
     return (
         <div className='Body'>
-            {/* <Add state={setData}/> */}
-            <Display state={[data, setData]}/>
+            {portal==="Add" && <Add state={[setData, setPortal]}/>}
+            {portal==="Display" && <Display state={[data, setData, setPortal]}/>}
             {/* <Update /> */}
-            {/* <States /> */}
-            {/* <Delete /> */}
         </div>
     )
 }

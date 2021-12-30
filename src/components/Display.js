@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import '../css/display.css'
 import { FaMinus, FaEdit, FaPlus } from 'react-icons/fa'
 import { MdOutlineDownloadDone } from 'react-icons/md'
 
 function Display(props) {
-    const [data, setData] = props.state;
+    const [data, setData, setPortal] = props.state;
 
     const removeData = (e) => {
         setData(data => {
@@ -17,10 +17,11 @@ function Display(props) {
             return [...data]
         })
     }
+
     return (
         <div className='disp-container'>
             <nav>
-                <FaPlus className='fa-plus icons'/>
+                <FaPlus className='fa-plus back-icon' onClick={()=>setPortal("Add")}/>
             </nav>
             {data.map((rec,index) => {
                 return (
