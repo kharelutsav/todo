@@ -1,13 +1,14 @@
-import React from 'react'
 import { useState, useEffect } from 'react/cjs/react.development'
 import Add from './Add'
-import Delete from './Delete'
+// import Delete from './Delete'
 import Display from './Display'
-import States from './States'
+// import States from './States'
 import Update from './Update'
 
 function Body() {
     const [data, setData] = useState(JSON.parse(localStorage.getItem('add')) || []);
+    const [portal, setPortal] = useState('Display')
+    const [index, setIndex] = useState(0)
 
     useEffect(() => {
         localStorage.setItem('add', JSON.stringify(data))
@@ -23,17 +24,11 @@ function Body() {
         fetchData()
     })
 
-    window.addEventListener('storage', ()=>console.log(localStorage.getItem('add')))
-    
-    // const deleteData = () => {}
-
     return (
         <div className='Body'>
-            <Add state={setData}/>
-            <Display data={data}/>
-            {/* <Update /> */}
-            {/* <States /> */}
-            {/* <Delete /> */}
+            {portal==="Add" && <Add state={[setData, setPortal]}/>}
+            {portal==="Display" && <Display state={[data, setData, setPortal]} indexs={setIndex}/>}
+            {portal==="Update" && <Update state={[data, setData, setPortal]} indexs={index}/>}
         </div>
     )
 }

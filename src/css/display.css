@@ -1,0 +1,76 @@
+.disp-container {
+    background-color: cornsilk;
+    width: calc(28vh + 28vw);
+    min-width: fit-content;
+    min-height: calc(14vh + 14vw);
+    border-radius: 14px;
+}
+
+.disp-item {
+    background-color: aliceblue;
+    text-align: left;
+    padding: calc(0.7vh + 0.7vw);
+    box-shadow: 0 4px 8px 0 rgba(48, 47, 47, 0.2);
+    margin: 5px;
+    border-radius: 14px;
+}
+
+.disp-item:hover {
+    box-shadow: 0 8px 16px 0 rgba(63, 61, 61, 0.2);
+}
+
+.btn-svg {
+    padding: 0px;
+    margin: 0px;
+    border-radius: 100px;
+    background-color: red;
+    border: 0px solid white;
+}
+
+.fa-plus,
+.ic {
+    background-color: whitesmoke;
+    color: black;
+    padding: 5px;
+    border-radius: 21px;
+    border: 2px solid white;
+}
+
+.fa-plus:hover,
+.ic:hover {
+    background-color: whitesmoke;
+    color: rgb(52, 156, 247);
+    box-shadow: 0 8px 16px 0 rgba(63, 61, 61, 0.2);
+    width: 21px;
+    height: 21px;
+}
+
+div.all-icons {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+}
+
+.span-ic {
+    flex: 1 0 auto;
+    text-align: center;
+}
+
+p {
+    margin: 0px;
+}
+
+.todo-name {
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.other-text {
+    font-weight: 500;
+    font-size: 0.7rem;
+}
+
+
