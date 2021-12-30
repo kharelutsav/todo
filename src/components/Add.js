@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/add.css'
 import { useState } from 'react'
 
 function Add(props) {
@@ -20,7 +21,7 @@ function Add(props) {
 
     return (
         <div>
-            <input placeholder='Enter a new todo.' value={input} onInput={e => setInput(e.target.value)}/>
+            <input placeholder='Enter a new todo.' value={input} onInput={e => setInput(e.target.value)} className='inp-todo'/>
             <br/>
             <select value={option} onChange={e=>setOption(e.target.value)}>
                 <option>Critical</option>

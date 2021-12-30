@@ -1,37 +1,29 @@
 import React from 'react'
-import { FaMinus, FaEdit } from 'react-icons/fa'
+import '../css/display.css'
+import { FaMinus, FaEdit, FaPlus } from 'react-icons/fa'
 import { MdOutlineDownloadDone } from 'react-icons/md'
+import { FcExpired } from 'react-icons/fc'
 
 function Display({data}) {
     return (
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>TODO</th>
-                        <th>Date Added</th>
-                        <th>Time Added</th>
-                        <th>Severity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((prop, index)=>{
-                        return (
-                            <tr key={index}>
-                                <td>{prop[0]}</td>
-                                <td>{prop[1]}</td>
-                                <td>{prop[2]}</td>  
-                                <td>{prop[3]}</td> 
-                                <td>
-                                    <FaMinus className='icons'/>
-                                    <FaEdit className='icons'/>
-                                    <MdOutlineDownloadDone className='icons'/>
-                                </td>
-                            </tr>)
-                        })}
-
-                </tbody>
-            </table>
+        <div className='disp-container'>
+            <nav>
+                <FaPlus className='fa-plus icons'/>
+            </nav>
+            {data.map(rec => {
+                return (
+                    <div className='disp-item'>
+                        <span>
+                            <FaMinus className='fa-minus icons'/>
+                            <FaEdit className='fa-edit icons'/>
+                            <MdOutlineDownloadDone className='md-done icons'/>
+                            <FcExpired className='fc-exp icons'/>
+                        </span>
+                        <p><b>{rec[0]}</b></p>
+                        <p>{rec[1]}</p>
+                        <p>{rec[2]}</p>
+                    </div>)
+            })}
         </div>
     )
 }
