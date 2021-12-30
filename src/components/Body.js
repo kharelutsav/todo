@@ -24,13 +24,11 @@ function Body() {
         fetchData()
     })
 
-    window.addEventListener('storage', ()=>console.log(localStorage.getItem('add')))
-
     return (
         <div className='Body'>
             {portal==="Add" && <Add state={[setData, setPortal]}/>}
-            {portal==="Display" && <Display state={[data, setData, setPortal]} indexs={[index, setIndex]}/>}
-            {portal==="Update" && <Update state={[data, setData, setPortal]} indexs={[index, setIndex]}/>}
+            {portal==="Display" && <Display state={[data, setData, setPortal]} indexs={setIndex}/>}
+            {portal==="Update" && <Update state={[data, setData, setPortal]} indexs={index}/>}
         </div>
     )
 }

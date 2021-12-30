@@ -7,26 +7,30 @@ import { GrUpdate } from 'react-icons/gr'
 
 function Add(props) {
     const [data, setData, setPortal] = props.state
-    const [index, setIndex] = props.indexs
-    let prevData = data.slice(index, index+1);
+    const index = props.indexs
+    let prevData = data[index];
     const [input, setInput] = useState(prevData[0])
     const [desc, setDesc] = useState(prevData[5])
     const [severity, setSeverity] = useState(prevData[3])
     const [expiry, setExpiry] = useState(prevData[4])
 
-    const addData = () => {
+    const updateData = () => {
         if (input === "") {
-            return alert('Input can not be empty.')
+            return alert('You can not leave name field empty.')
         }
         const records = [input, prevData[1], prevData[2], severity, expiry, desc]
-        setData( rec => [...rec, records])
+        
+        setData( rec => {
+            rec.splice(index, 1, records)
+            return rec
+        })
         setPortal('Display')
     }
     return (
         <div className='disp-container update'>
             <div className='add-icons'>
                 <span>
-                    <GrUpdate className='fa-plus icons' onClick={addData}/>
+                    <GrUpdate className='fa-plus icons' onClick={updateData}/>
                 </span>
                 <span>
                     <FaExclamation className='fa-plus icons'/>

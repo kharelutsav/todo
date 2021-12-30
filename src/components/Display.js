@@ -5,7 +5,7 @@ import { MdOutlineDownloadDone } from 'react-icons/md'
 
 function Display(props) {
     const [data, setData, setPortal] = props.state;
-    const [index, setIndex] = props.indexs
+    const setIndex = props.indexs
 
     return (
         <div className='disp-container'>
