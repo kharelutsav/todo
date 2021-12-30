@@ -13,15 +13,20 @@ function Display({data}) {
             {data.map(rec => {
                 return (
                     <div className='disp-item'>
-                        <span>
-                            <FaMinus className='fa-minus icons'/>
-                            <FaEdit className='fa-edit icons'/>
-                            <MdOutlineDownloadDone className='md-done icons'/>
-                            <FcExpired className='fc-exp icons'/>
-                        </span>
-                        <p><b>{rec[0]}</b></p>
-                        <p>{rec[1]}</p>
-                        <p>{rec[2]}</p>
+                        <div className='all-icons'>
+                            <span className='span-ic'>
+                                <FaMinus className='fa-minus icons ic'/>
+                            </span>
+                            <span className='span-ic'>
+                                <FaEdit className='fa-edit icons ic'/>
+                            </span>
+                            <span className='span-ic'>
+                                <MdOutlineDownloadDone className='md-done icons ic'/>
+                            </span>
+                                {/* <FcExpired className='fc-exp icons'/> */}
+                        </div>                      
+                        <p className='todo-name'>{rec[0]}</p>
+                        <p className='other-text'>{rec[1]} {rec[2]}</p>
                     </div>)
             })}
         </div>
