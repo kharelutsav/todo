@@ -2,24 +2,37 @@
     text-transform: capitalize;
 }
 
-.Update,
-.update-footer,
-.update-description-info,
-.update-sidebar-info {
-    border-radius: 14px;
+span.severity,
+span.expire-on {
+    display: inline-flex;
+    margin-left:  14px;
+    padding: 2px;
 }
 
-.Update {
-    background-color: white;
+.fi-ic {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: lightslategray;
+}
+
+#severity, #expiry {
+    background-color: rgb(46, 115, 245);
+    z-index: 999;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 7px;
+    min-width: 100px;
+    color: whitesmoke;
+    font-size: 21px;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* Header Related Animations */
-
-.update-header {
-    position: relative;
-    background-color: rgb(58, 65, 71);
-    color: whitesmoke;
-}
 
 .add-icons {
     display: inline-block;
