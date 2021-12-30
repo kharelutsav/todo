@@ -3,11 +3,12 @@ import Add from './Add'
 // import Delete from './Delete'
 import Display from './Display'
 // import States from './States'
-// import Update from './Update'
+import Update from './Update'
 
 function Body() {
     const [data, setData] = useState(JSON.parse(localStorage.getItem('add')) || []);
     const [portal, setPortal] = useState('Display')
+    const [index, setIndex] = useState(0)
 
     useEffect(() => {
         localStorage.setItem('add', JSON.stringify(data))
@@ -28,8 +29,8 @@ function Body() {
     return (
         <div className='Body'>
             {portal==="Add" && <Add state={[setData, setPortal]}/>}
-            {portal==="Display" && <Display state={[data, setData, setPortal]}/>}
-            {/* <Update /> */}
+            {portal==="Display" && <Display state={[data, setData, setPortal]} indexs={[index, setIndex]}/>}
+            {portal==="Update" && <Update state={[data, setData, setPortal]} indexs={[index, setIndex]}/>}
         </div>
     )
 }

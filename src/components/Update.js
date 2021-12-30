@@ -1,33 +1,32 @@
 import '../css/add.css'
 import { useState } from 'react'
-import { FaPlus, FaExclamation } from 'react-icons/fa'
+import { FaExclamation } from 'react-icons/fa'
 import { FiPlus, FiMinus } from 'react-icons/fi'
 import { ImCross } from 'react-icons/im'
+import { GrUpdate } from 'react-icons/gr'
 
 function Add(props) {
-    const [input, setInput] = useState('')
-    const [desc, setDesc] = useState('')
-    const [severity, setSeverity] = useState(1)
-    const [expiry, setExpiry] = useState(5)
-    const [setData, setPortal] = props.state
-
-    const time = new Date().toLocaleTimeString()
-    const date = new Date().toDateString()
+    const [data, setData, setPortal] = props.state
+    const [index, setIndex] = props.indexs
+    let prevData = data.slice(index, index+1);
+    const [input, setInput] = useState(prevData[0])
+    const [desc, setDesc] = useState(prevData[5])
+    const [severity, setSeverity] = useState(prevData[3])
+    const [expiry, setExpiry] = useState(prevData[4])
 
     const addData = () => {
         if (input === "") {
             return alert('Input can not be empty.')
         }
-        const records = [input, date, time, severity, expiry, desc]
+        const records = [input, prevData[1], prevData[2], severity, expiry, desc]
         setData( rec => [...rec, records])
         setPortal('Display')
-        // setInput('')
     }
     return (
-        <div className='disp-container'>
+        <div className='disp-container update'>
             <div className='add-icons'>
                 <span>
-                    <FaPlus className='fa-plus icons' onClick={addData}/>
+                    <GrUpdate className='fa-plus icons' onClick={addData}/>
                 </span>
                 <span>
                     <FaExclamation className='fa-plus icons'/>

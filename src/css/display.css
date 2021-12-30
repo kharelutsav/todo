@@ -19,6 +19,14 @@
     box-shadow: 0 8px 16px 0 rgba(63, 61, 61, 0.2);
 }
 
+.btn-svg {
+    padding: 0px;
+    margin: 0px;
+    border-radius: 100px;
+    background-color: red;
+    border: 0px solid white;
+}
+
 .fa-plus,
 .ic {
     background-color: whitesmoke;

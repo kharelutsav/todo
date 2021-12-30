@@ -2,6 +2,10 @@
     text-transform: capitalize;
 }
 
+.update {
+    position: relative;
+}
+
 span.severity,
 span.expire-on {
     display: inline-flex;

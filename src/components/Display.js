@@ -5,36 +5,29 @@ import { MdOutlineDownloadDone } from 'react-icons/md'
 
 function Display(props) {
     const [data, setData, setPortal] = props.state;
-
-    const removeData = (e) => {
-        setData(data => {
-            const index = e.target.getAttribute('value')
-            let rec = [...data]
-            if (index){
-                rec.splice(index, 1)
-                return [...rec]
-            }
-            return [...data]
-        })
-    }
+    const [index, setIndex] = props.indexs
 
     return (
         <div className='disp-container'>
             <nav>
                 <FaPlus className='fa-plus back-icon' onClick={()=>setPortal("Add")}/>
             </nav>
-            {data.map((rec,index) => {
+            {data.map((rec,idx) => {
                 return (
-                    <div className='disp-item' key={index}>
+                    <div className='disp-item' key={idx}>
                         <div className='all-icons'>
                             <span className='span-ic'>
-                                <FaMinus className='fa-minus icons ic' onClick={removeData} value={index}/>
+                                <FaMinus className='fa-minus icons ic' onClick={()=>{setData(Data => {
+                                                                                        let data = [...Data];
+                                                                                        data.splice(idx, 1);
+                                                                                        return [...data];
+                                                                                    }); setIndex(idx);}}/>
                             </span>
                             <span className='span-ic'>
-                                <FaEdit className='fa-edit icons ic' value={index}/>
+                                <FaEdit className='fa-edit icons ic' onClick={()=>{setPortal("Update"); setIndex(idx);}}/>
                             </span>
                             <span className='span-ic'>
-                                <MdOutlineDownloadDone className='md-done icons ic' value={index}/>
+                                <MdOutlineDownloadDone className='md-done icons ic'/>
                             </span>
                         </div>                      
                         <p className='todo-name'>{rec[0]}</p>
