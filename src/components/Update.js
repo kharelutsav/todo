@@ -1,14 +1,15 @@
-import '../css/add.css'
+import '../css/add_update.css';
+import '../css/update.css';
 import { useState } from 'react'
 import { FaExclamation } from 'react-icons/fa'
 import { FiPlus, FiMinus } from 'react-icons/fi'
-// import { FcNext, FcPrevious } from 'react-icons/fc'
+import { FcNext, FcPrevious } from 'react-icons/fc'
 import { ImCross } from 'react-icons/im'
 import { GrUpdate } from 'react-icons/gr'
 
 function Update(props) {
-    const [data, setData, setPortal] = props.state
-    const index = props.indexs
+    const [data, setData, setPortal, count] = props.state
+    const [index, setIndex] = props.indexs
     const prevData = data[index];
     const [input, setInput] = useState(prevData[0])
     const [desc, setDesc] = useState(prevData[5])
@@ -30,14 +31,14 @@ function Update(props) {
     return (
         <div className='disp-container update'>
             <div className='add-icons'>
-                {/* <span>
+                <span>
                     <FcPrevious className='fa-plus icons prev-ic' onClick={()=>{
                         if (index > 0) {
                             return setIndex(index - 1)
                         }
                         return
                         }}/>
-                </span> */}
+                </span>
                 <span>
                     <GrUpdate className='fa-plus icons' onClick={updateData}/>
                 </span>
@@ -47,7 +48,7 @@ function Update(props) {
                 <span>
                     <ImCross className='fa-plus icons' onClick={()=>setPortal('Display')}/>
                 </span>
-                {/* <span>
+                <span>
                     <FcNext className='fa-plus icons next-ic' onClick={()=>{
                         console.log(index);
                         if (index < count-1) {
@@ -55,7 +56,7 @@ function Update(props) {
                         }
                         return
                         }}/>
-                </span> */}
+                </span>
             </div>
 
             <div className= 'disp-item'>

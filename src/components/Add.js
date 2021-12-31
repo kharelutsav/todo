@@ -1,4 +1,4 @@
-import '../css/add.css'
+import '../css/add_update.css'
 import { useState } from 'react'
 import { FaPlus, FaExclamation } from 'react-icons/fa'
 import { FiPlus, FiMinus } from 'react-icons/fi'

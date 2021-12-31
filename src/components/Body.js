@@ -25,8 +25,8 @@ function Body() {
     return (
         <div className='Body'>
             {portal==="Add" && <Add state={[setData, setPortal]}/>}
-            {portal==="Display" && <Display state={[data, setData, setPortal]} indexs={setIndex}/>}
-            {portal==="Update" && <Update state={[data, setData, setPortal]} indexs={index}/>}
+            {portal==="Display" && <Display state={[data, setData, setPortal, data.length]} indexs={setIndex}/>}
+            {portal==="Update" && <Update state={[data, setData, setPortal]} indexs={[index, setIndex]}/>}
         </div>
     )
 }
