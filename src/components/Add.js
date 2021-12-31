@@ -1,4 +1,5 @@
 import '../css/add_update.css'
+import '../css/all.css'
 import { useState } from 'react'
 import { FaPlus, FaExclamation } from 'react-icons/fa'
 import { FiPlus, FiMinus } from 'react-icons/fi'
@@ -25,7 +26,7 @@ function Add(props) {
     }
     return (
         <div className='disp-container'>
-            <div className='add-icons'>
+            <div className='add-icons update-icons'>
                 <span>
                     <FaPlus className='fa-plus icons' onClick={addData}/>
                 </span>
@@ -56,7 +57,7 @@ function Add(props) {
                         }}/>
                 </span>
                 <span className='expire-on'>
-                    <p>Expire-on</p>
+                    <p>Expiry</p>
                     <FiMinus className='fi-ic' onClick={()=>{
                         if (expiry > 1){
                             return setExpiry(expiry-1)

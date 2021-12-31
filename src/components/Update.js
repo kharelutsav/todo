@@ -1,6 +1,7 @@
 import '../css/add_update.css';
 import '../css/update.css';
-import { useState } from 'react'
+import '../css/all.css';
+import { useEffect, useState } from 'react'
 import { FaExclamation } from 'react-icons/fa'
 import { FiPlus, FiMinus } from 'react-icons/fi'
 import { FcNext, FcPrevious } from 'react-icons/fc'
@@ -10,17 +11,27 @@ import { GrUpdate } from 'react-icons/gr'
 function Update(props) {
     const [data, setData, setPortal, count] = props.state
     const [index, setIndex] = props.indexs
-    const prevData = data[index];
-    const [input, setInput] = useState(prevData[0])
-    const [desc, setDesc] = useState(prevData[5])
-    const [severity, setSeverity] = useState(prevData[3])
-    const [expiry, setExpiry] = useState(prevData[4])
+    const [newData, setNewData] = useState(data[index])
+    const [input, setInput] = useState(newData[0])
+    const [desc, setDesc] = useState(newData[5])
+    const [severity, setSeverity] = useState(newData[3])
+    const [expiry, setExpiry] = useState(newData[4])
+
+    useEffect(() => {
+        setInput(newData[0])
+        setDesc(newData[5])
+        setSeverity(newData[3])
+        setExpiry(newData[4])
+        // return () => {
+        //     cleanup
+        // }
+    }, [newData])
 
     const updateData = () => {
         if (input === "") {
             return alert('You can not leave name field empty.')
         }
-        const records = [input, prevData[1], prevData[2], severity, expiry, desc, prevData[6]]
+        const records = [input, newData[1], newData[2], severity, expiry, desc, newData[6]]
         
         setData( rec => {
             rec.splice(index, 1, records)
@@ -29,11 +40,12 @@ function Update(props) {
         setPortal('Display')
     }
     return (
-        <div className='disp-container update'>
-            <div className='add-icons'>
+        <div className='disp-container'>
+            <div className='add-icons update-icons'>
                 <span>
-                    <FcPrevious className='fa-plus icons prev-ic' onClick={()=>{
+                    <FcPrevious className='fa-plus icons prev-ic' style={{backgroundColor: index > 0 ? "" : "lightgrey" }} onClick={()=>{
                         if (index > 0) {
+                            setNewData(data[index-1])
                             return setIndex(index - 1)
                         }
                         return
@@ -49,9 +61,9 @@ function Update(props) {
                     <ImCross className='fa-plus icons' onClick={()=>setPortal('Display')}/>
                 </span>
                 <span>
-                    <FcNext className='fa-plus icons next-ic' onClick={()=>{
-                        console.log(index);
+                    <FcNext className='fa-plus icons next-ic' style={{backgroundColor: index < count-1 ? "" : "lightgrey"}} onClick={()=>{
                         if (index < count-1) {
+                            setNewData(data[index+1])
                             return setIndex(index + 1)
                         }
                         return
@@ -78,7 +90,7 @@ function Update(props) {
                         }}/>
                 </span>
                 <span className='expire-on'>
-                    <p>Expire-on</p>
+                    <p>Expiry</p>
                     <FiMinus className='fi-ic' onClick={()=>{
                         if (expiry > 1){
                             return setExpiry(expiry-1)

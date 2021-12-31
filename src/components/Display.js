@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../css/display.css'
+import '../css/all.css'
 import { FaMinus, FaEdit, FaPlus } from 'react-icons/fa'
 import { MdOutlineDownloadDone } from 'react-icons/md'
 
@@ -10,7 +11,7 @@ const Used = (props)=>{
         setMarked(rec[6])
     }, [rec])
     return (
-        <div className='disp-item'>
+        <div className='disp-item disp-item-hover'>
             <div className='all-icons'>
                 <span className='span-ic'>
                     {marked && <FaMinus className='fa-minus icons ic' onClick={()=>{
@@ -20,7 +21,7 @@ const Used = (props)=>{
                             return [...data];
                         });
                         }}/>}
-                    {!marked && <FaMinus className='fa-minus ic' style={{color: "rgb(52, 156, 247)", backgroundColor: "lightgrey"}}/>}
+                    {!marked && <FaMinus className='fa-minus ic' style={{backgroundColor: "lightgrey"}}/>}
                 </span>
                 <span className='span-ic'>
                     {!marked && <FaEdit className='fa-edit icons ic' onClick={()=>{setPortal("Update"); setIndex(idx);}}/>}
@@ -49,14 +50,14 @@ function Display(props) {
 
     return (
         <div className='disp-container'>
-            <nav>
-                <FaPlus className='fa-plus back-icon' onClick={()=>setPortal("Add")}/>
-            </nav>
             {data.map((rec,idx) => {
                 return (
                     <Used props={[rec, idx, data, setData, setIndex, setPortal]} key={idx}/>
                 )
             })}
+            <nav>
+                <FaPlus className='fa-plus disp-plus-icon' onClick={()=>setPortal("Add")}/>
+            </nav>
         </div>
     )
 }

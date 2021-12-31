@@ -1,46 +1,26 @@
-.disp-container {
-    background-color: whitesmoke;
-    width: calc(14vh + 56vw);
-    min-width: fit-content;
-    min-height: calc(56vh + 14vw);
-    border-radius: 14px;
-    box-shadow: 0 4px 8px 0 rgba(48, 47, 47, 0.2);
-}
-
-.disp-item {
-    /* background-color: rgb(245, 245, 244); */
-    background-color: white;
-    text-align: left;
-    padding: calc(0.7vh + 0.7vw);
-    box-shadow: 0 4px 8px 0 rgba(48, 47, 47, 0.2);
-    margin: 5px;
-    border-radius: 14px;
-}
-/* 
-.disp-item:hover {
+.disp-item-hover:hover {
     box-shadow: 0 8px 16px 0 rgba(63, 61, 61, 0.2);
-} */
+}
 
-.fa-plus,
-.ic {
-    background-color: whitesmoke;
-    padding: 5px;
-    border-radius: 21px;
-    /* border: 2px solid white; */
-    border: 2px solid rgb(218, 218, 218);
+.disp-item-hover {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 7px;
+}
+
+.disp-plus-icon {
+    position: absolute;
+    top: -1.4px;
+    right: -1.4px;
+    width: 28px;
+    height: 28px;
 }
 
 .fa-minus {
-    color: red
+    color: red;
 }
-
-.fa-plus:hover,
-.ic:hover {
-    background-color: whitesmoke;
-    color: rgb(52, 156, 247);
-    box-shadow: 0 8px 16px 0 rgba(63, 61, 61, 0.2);
-    width: 21px;
-    height: 21px;
+.fa-minus:hover {
+    color: red !important;
 }
 
 div.all-icons {
@@ -54,10 +34,6 @@ div.all-icons {
 .span-ic {
     flex: 1 0 auto;
     text-align: center;
-}
-
-p {
-    margin: 0px;
 }
 
 .todo-name {
