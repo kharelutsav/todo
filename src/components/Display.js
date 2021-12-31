@@ -1,20 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../css/display.css'
 import { FaMinus, FaEdit, FaPlus } from 'react-icons/fa'
 import { MdOutlineDownloadDone } from 'react-icons/md'
 
-const Used = React.memo((props)=>{
+const Used = (props)=>{
     const [rec, idx, data, setData, setIndex, setPortal] = props.props
-    const [marked, setMarked] = useState(rec[6]);
+    const [marked, setMarked] = useState(false);
+    useEffect(() => {
+        setMarked(rec[6])
+    }, [rec])
     return (
         <div className='disp-item'>
             <div className='all-icons'>
                 <span className='span-ic'>
-                    {marked && <FaMinus className='fa-minus icons ic' onClick={()=>{setData(Data => {
-                                                                            let data = [...Data];
-                                                                            data.splice(idx, 1);
-                                                                            return [...data];
-                                                                        }); setIndex(idx);}}/>}
+                    {marked && <FaMinus className='fa-minus icons ic' onClick={()=>{
+                        setData(Data => {
+                            let data = [...Data];
+                            data.splice(idx, 1);
+                            return [...data];
+                        });
+                        }}/>}
                     {!marked && <FaMinus className='fa-minus ic' style={{color: "rgb(52, 156, 247)", backgroundColor: "lightgrey"}}/>}
                 </span>
                 <span className='span-ic'>
@@ -36,7 +41,7 @@ const Used = React.memo((props)=>{
             </span>
         </div>                      
     )
-})
+}
 
 function Display(props) {
     const [data, setData, setPortal] = props.state;
