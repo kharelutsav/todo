@@ -18,8 +18,8 @@ function Add(props) {
         if (input === "") {
             return alert('Input can not be empty.')
         }
-        const records = [input, date, time, severity, expiry, desc]
-        setData( rec => [...rec, records])
+        const records = [input, date, time, severity, expiry, desc, false]
+        setData( rec => [records, ...rec])
         setPortal('Display')
         // setInput('')
     }

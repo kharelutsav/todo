@@ -2,13 +2,14 @@ import '../css/add.css'
 import { useState } from 'react'
 import { FaExclamation } from 'react-icons/fa'
 import { FiPlus, FiMinus } from 'react-icons/fi'
+// import { FcNext, FcPrevious } from 'react-icons/fc'
 import { ImCross } from 'react-icons/im'
 import { GrUpdate } from 'react-icons/gr'
 
-function Add(props) {
+function Update(props) {
     const [data, setData, setPortal] = props.state
     const index = props.indexs
-    let prevData = data[index];
+    const prevData = data[index];
     const [input, setInput] = useState(prevData[0])
     const [desc, setDesc] = useState(prevData[5])
     const [severity, setSeverity] = useState(prevData[3])
@@ -18,7 +19,7 @@ function Add(props) {
         if (input === "") {
             return alert('You can not leave name field empty.')
         }
-        const records = [input, prevData[1], prevData[2], severity, expiry, desc]
+        const records = [input, prevData[1], prevData[2], severity, expiry, desc, prevData[6]]
         
         setData( rec => {
             rec.splice(index, 1, records)
@@ -29,6 +30,14 @@ function Add(props) {
     return (
         <div className='disp-container update'>
             <div className='add-icons'>
+                {/* <span>
+                    <FcPrevious className='fa-plus icons prev-ic' onClick={()=>{
+                        if (index > 0) {
+                            return setIndex(index - 1)
+                        }
+                        return
+                        }}/>
+                </span> */}
                 <span>
                     <GrUpdate className='fa-plus icons' onClick={updateData}/>
                 </span>
@@ -38,6 +47,15 @@ function Add(props) {
                 <span>
                     <ImCross className='fa-plus icons' onClick={()=>setPortal('Display')}/>
                 </span>
+                {/* <span>
+                    <FcNext className='fa-plus icons next-ic' onClick={()=>{
+                        console.log(index);
+                        if (index < count-1) {
+                            return setIndex(index + 1)
+                        }
+                        return
+                        }}/>
+                </span> */}
             </div>
 
             <div className= 'disp-item'>
@@ -86,4 +104,4 @@ function Add(props) {
     )
 }
 
-export default Add
+export default Update
