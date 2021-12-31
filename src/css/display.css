@@ -19,21 +19,16 @@
     box-shadow: 0 8px 16px 0 rgba(63, 61, 61, 0.2);
 }
 
-.btn-svg {
-    padding: 0px;
-    margin: 0px;
-    border-radius: 100px;
-    background-color: red;
-    border: 0px solid white;
-}
-
 .fa-plus,
 .ic {
     background-color: whitesmoke;
-    color: black;
     padding: 5px;
     border-radius: 21px;
     border: 2px solid white;
+}
+
+.fa-minus {
+    color: red
 }
 
 .fa-plus:hover,
@@ -56,6 +51,11 @@ div.all-icons {
 .span-ic {
     flex: 1 0 auto;
     text-align: center;
+}
+
+.span-desc[title] {
+    width: 350px;
+    background-color: aliceblue;
 }
 
 p {
