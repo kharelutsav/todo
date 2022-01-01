@@ -11,7 +11,8 @@ import { GrUpdate } from 'react-icons/gr'
 function Update(props) {
     const [data, setData, setPortal, count] = props.state
     const [index, setIndex] = props.indexs
-    const [newData, setNewData] = useState(data[index])
+    const [changedData, setChangedData] = useState(JSON.parse(JSON.stringify(data)))
+    const [newData, setNewData] = useState(changedData[index])
     const [input, setInput] = useState(newData[0])
     const [desc, setDesc] = useState(newData[5])
     const [severity, setSeverity] = useState(newData[3])
@@ -45,7 +46,12 @@ function Update(props) {
                 <span>
                     <FcPrevious className='fa-plus icons prev-ic' style={{backgroundColor: index > 0 ? "" : "lightgrey" }} onClick={()=>{
                         if (index > 0) {
-                            setNewData(data[index-1])
+                            const records = [input, newData[1], newData[2], severity, expiry, desc, newData[6]]
+                            setChangedData( rec => {
+                                rec.splice(index, 1, records)
+                                return rec
+                            })
+                            setNewData(changedData[index-1])
                             return setIndex(index - 1)
                         }
                         return
@@ -63,7 +69,12 @@ function Update(props) {
                 <span>
                     <FcNext className='fa-plus icons next-ic' style={{backgroundColor: index < count-1 ? "" : "lightgrey"}} onClick={()=>{
                         if (index < count-1) {
-                            setNewData(data[index+1])
+                            const records = [input, newData[1], newData[2], severity, expiry, desc, newData[6]]
+                            setChangedData( rec => {
+                                rec.splice(index, 1, records)
+                                return rec
+                            })
+                            setNewData(changedData[index+1])
                             return setIndex(index + 1)
                         }
                         return

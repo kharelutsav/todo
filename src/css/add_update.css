@@ -1,3 +1,44 @@
+.disp-container {
+    position: relative;
+    background-color: whitesmoke;
+    width: calc(7vh + 56vw);
+    min-width: 320px;
+    height: 630px;
+    max-height: 630px;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px 0 rgba(48, 47, 47, 0.2);
+    padding: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.disp-container::-webkit-scrollbar {
+    display: none;
+}
+
+.disp-item {
+    /* background-color: rgb(245, 245, 244); */
+    position: relative;
+    background-color: white;
+    text-align: left;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(48, 47, 47, 0.2);
+    margin-left: 3vw !important;
+    margin-right: 3vw !important;
+    margin-top: 1.4vh;
+    margin-bottom: 0.7vh;
+    border-radius: 14px;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
 .update-icons {
     padding: 0px;
     margin: 0px;

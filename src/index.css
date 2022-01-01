@@ -6,14 +6,53 @@ html {
 
 body {
   /* background-color: rgb(124, 137, 165); */
+  position: relative;
+  top: 0px;
   background-color: rgb(236, 236, 236);
-  margin: 0;
+  padding: 0px;
   font-size: calc(14px + 1vmax);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+#header {
+  padding: 0px;
+  background-color: red;
+  text-align: center;
+  display: block;
+} */
+
+#root {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  /* background-color: cornsilk; */
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+  min-width: fit-content;
+  min-height: fit-content;
+}
+
+#root0 {
+  padding: calc(0.5vh + 0.5vw);
+  margin: 10px;
+  height: 630px;
+  min-height: 630px;
+  width: fit-content;
+}
+
+#root1 {
+  padding: calc(0.5vh + 0.5vw);
+  margin: 10px;
+  min-width: 700px;
+  height: 630px;
+  min-height: 630px;
+  max-height: 630px;
 }
 
 code {
