@@ -28,13 +28,13 @@ function Add(props) {
         <div className='disp-container'>
             <div className='add-icons update-icons'>
                 <span>
-                    <FaPlus className='fa-plus icons' onClick={addData}/>
+                    <ImCross className='fa-plus icons' onClick={()=>setPortal('Display')}/>
                 </span>
                 <span>
                     <FaExclamation className='fa-plus icons'/>
                 </span>
                 <span>
-                    <ImCross className='fa-plus icons' onClick={()=>setPortal('Display')}/>
+                    <FaPlus className='fa-plus icons' onClick={addData}/>
                 </span>
             </div>
 

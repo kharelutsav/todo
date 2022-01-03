@@ -23,14 +23,14 @@ function Body() {
     window.addEventListener('load', ()=>{
         fetchData()
     })
-
+    
     return (
         <div className='Body'>
-            <Display state={[data, setData, setPortal]} indexs={setIndex}/>
+            {data.length !== 0 && <Display state={[data, setData, setPortal]} indexs={setIndex}/>}
             {
             portal==="Display" && 
             ReactDOM.createPortal(
-                <States/>,
+                <States props={setPortal}/>,
                 document.getElementById("root1")
                 )
             }

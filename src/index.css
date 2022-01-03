@@ -6,6 +6,9 @@ html {
 
 body {
   /* background-color: rgb(124, 137, 165); */
+  background-image: url("../public/todo2.jpg");
+  background-size: contain;
+  background-position: center;
   position: relative;
   top: 0px;
   background-color: rgb(236, 236, 236);
@@ -16,6 +19,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  z-index: -1;
 }
 
 /* 
@@ -25,18 +29,6 @@ body {
   text-align: center;
   display: block;
 } */
-
-#root {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  /* background-color: cornsilk; */
-  padding: 10px;
-  width: fit-content;
-  height: fit-content;
-  min-width: fit-content;
-  min-height: fit-content;
-}
 
 #root0 {
   padding: calc(0.5vh + 0.5vw);

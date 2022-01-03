@@ -36,8 +36,10 @@ const Used = (props)=>{
                         }} style={{backgroundColor: marked ? "green" : ""}}/>
                 </span>
             </div>
+            {/* <hr/> */}
             <span className="span-desc" title={rec[5]}>
                 <p className='todo-name'>{rec[0]}</p>
+                <hr/>
                 <p className='other-text'>{rec[1]} {rec[2]}</p>
             </span>
         </div>                      

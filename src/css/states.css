@@ -1,0 +1,15 @@
+.add-todo {
+    border-radius: 7px;
+    margin: auto;
+    color: blue;
+    top: 47%;
+    left: 47%;
+    position: absolute;
+    font-weight: 500;
+    font-size: 21px;
+    text-decoration: underline;
+}
+
+.add-todo:hover {
+    cursor: pointer;
+}

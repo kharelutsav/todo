@@ -1,17 +1,19 @@
 .disp-left-container {
     position: relative;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
+    background-color: black;
     min-width: 340px;
     min-width: 340px;
     height: 630px;
     max-height: 630px;
     border-radius: 14px;
-    box-shadow: 0 4px 8px 0 rgba(48, 47, 47, 0.2);
+    border: 2px solid black;
     padding: 7px;
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    opacity: 0.8;
 }
 
 .disp-left-container::-webkit-scrollbar {
@@ -21,16 +23,32 @@
 .disp-left-item {
     /* background-color: rgb(245, 245, 244); */
     position: relative;
-    background-color: white;
+    /* background-color: white; */
     text-align: left;
     padding: 7px;
-    box-shadow: 0 4px 8px 0 rgba(48, 47, 47, 0.2);
+    border: 0.1px solid rgb(58, 57, 57);
+    /* box-shadow: 0 2px 4px 0 rgb(63, 61, 61); */
     margin: 7px;
     border-radius: 14px;
 }
 
-.disp-item-hover:hover {
-    box-shadow: 0 8px 16px 0 rgba(63, 61, 61, 0.2);
+hr {
+    padding: 0px;
+    margin: 0px;
+}
+
+.disp-left-item-hover:hover {
+    /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 1); */
+    box-shadow: 0 4px 8px 0 rgb(63, 61, 61);
+    border: 2px solid white;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .disp-item-hover {
