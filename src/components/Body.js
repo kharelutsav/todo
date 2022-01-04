@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react/cjs/react.development'
+import ReactDOM from 'react-dom'
 import Add from './Add'
 import Display from './Display'
 import Update from './Update'
+import States from './States'
 
 function Body() {
     const [data, setData] = useState(JSON.parse(localStorage.getItem('add')) || []);
@@ -21,12 +23,31 @@ function Body() {
     window.addEventListener('load', ()=>{
         fetchData()
     })
-
+    
     return (
         <div className='Body'>
-            {portal==="Add" && <Add state={[setData, setPortal]}/>}
-            {portal==="Display" && <Display state={[data, setData, setPortal]} indexs={setIndex}/>}
-            {portal==="Update" && <Update state={[data, setData, setPortal]} indexs={index}/>}
+            {data.length !== 0 && <Display state={[data, setData, setPortal]} indexs={setIndex}/>}
+            {
+            portal==="Display" && 
+            ReactDOM.createPortal(
+                <States props={setPortal}/>,
+                document.getElementById("root1")
+                )
+            }
+            {
+            portal==="Add" && 
+            ReactDOM.createPortal(
+                <Add state={[setData, setPortal]}/>,
+                document.getElementById("root1")
+                )
+            }
+            {
+            portal==="Update" && 
+            ReactDOM.createPortal(
+                <Update state={[data, setData, setPortal, data.length]} indexs={[index, setIndex]}/>,
+                document.getElementById("root1")
+                )
+            }
         </div>
     )
 }

@@ -1,0 +1,28 @@
+#root {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    /* background-color: cornsilk; */
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    min-width: fit-content;
+    min-height: fit-content;
+  }
+  
+  #root0 {
+    padding: calc(0.5vh + 0.5vw);
+    margin: 10px;
+    height: 630px;
+    min-height: 630px;
+    width: fit-content;
+  }
+  
+  #root1 {
+    padding: calc(0.5vh + 0.5vw);
+    margin: 10px;
+    min-width: 700px;
+    height: 630px;
+    min-height: 630px;
+    max-height: 630px;
+  }

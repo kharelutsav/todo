@@ -1,0 +1,26 @@
+.icons {
+    color: rgb(52, 156, 247);
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.fa-plus,
+.ic {
+    background-color: whitesmoke;
+    padding: 5px;
+    border-radius: 19px;
+    /* border: 2px solid white; */
+    border: 2px solid rgb(218, 218, 218);
+}
+
+.fa-plus:hover,
+.ic:hover {
+    background-color: whitesmoke;
+    color: rgb(52, 156, 247);
+    box-shadow: 0 8px 16px 0 rgba(63, 61, 61, 0.2);
+    width: 14px;
+    height: 14px;
+}

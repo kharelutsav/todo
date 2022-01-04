@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../css/display.css'
-import { FaMinus, FaEdit, FaPlus } from 'react-icons/fa'
+import '../css/all.css'
+import { FaMinus, FaEdit } from 'react-icons/fa'
 import { MdOutlineDownloadDone } from 'react-icons/md'
 
 const Used = (props)=>{
@@ -10,7 +11,7 @@ const Used = (props)=>{
         setMarked(rec[6])
     }, [rec])
     return (
-        <div className='disp-item'>
+        <div className='disp-left-item disp-left-item-hover'>
             <div className='all-icons'>
                 <span className='span-ic'>
                     {marked && <FaMinus className='fa-minus icons ic' onClick={()=>{
@@ -20,14 +21,14 @@ const Used = (props)=>{
                             return [...data];
                         });
                         }}/>}
-                    {!marked && <FaMinus className='fa-minus ic' style={{color: "rgb(52, 156, 247)", backgroundColor: "lightgrey"}}/>}
+                    {!marked && <FaMinus className='fa-minus icons ic' style={{backgroundColor: "lightgrey"}}/>}
                 </span>
                 <span className='span-ic'>
-                    {!marked && <FaEdit className='fa-edit icons ic' onClick={()=>{setPortal("Update"); setIndex(idx);}}/>}
-                    {marked && <FaEdit className='fa-edit icons ic' style={{backgroundColor: "lightgray"}}/>}
+                    {!marked && <FaEdit className='icons ic' onClick={()=>{setPortal("Update"); setIndex(idx);}}/>}
+                    {marked && <FaEdit className='icons ic' style={{backgroundColor: "lightgray"}}/>}
                 </span>
                 <span className='span-ic'>
-                    <MdOutlineDownloadDone className='md-done icons ic' onClick={()=>{
+                    <MdOutlineDownloadDone className='icons ic' onClick={()=>{
                         setMarked(!marked);
                         rec.splice(6,1,!marked)
                         data.splice(idx, 1, rec);
@@ -35,8 +36,10 @@ const Used = (props)=>{
                         }} style={{backgroundColor: marked ? "green" : ""}}/>
                 </span>
             </div>
+            {/* <hr/> */}
             <span className="span-desc" title={rec[5]}>
                 <p className='todo-name'>{rec[0]}</p>
+                <hr/>
                 <p className='other-text'>{rec[1]} {rec[2]}</p>
             </span>
         </div>                      
@@ -48,15 +51,15 @@ function Display(props) {
     const setIndex = props.indexs
 
     return (
-        <div className='disp-container'>
-            <nav>
-                <FaPlus className='fa-plus back-icon' onClick={()=>setPortal("Add")}/>
-            </nav>
+        <div className='disp-left-container'>
             {data.map((rec,idx) => {
                 return (
                     <Used props={[rec, idx, data, setData, setIndex, setPortal]} key={idx}/>
                 )
             })}
+            {/* <nav>
+                <FaPlus className='fa-plus disp-plus-icon' onClick={()=>setPortal("Add")}/>
+            </nav> */}
         </div>
     )
 }
