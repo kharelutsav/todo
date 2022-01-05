@@ -1,8 +1,10 @@
 .prev-ic {
     position: absolute;
+    top: 50%;
     left: 0px;
 }
 .next-ic {
+    top: 50%;
     position: absolute;
     right: 0px;
 }

@@ -51,15 +51,17 @@ function Display(props) {
     const setIndex = props.indexs
 
     return (
-        <div className='disp-left-container'>
-            {data.map((rec,idx) => {
-                return (
-                    <Used props={[rec, idx, data, setData, setIndex, setPortal]} key={idx}/>
-                )
-            })}
-            {/* <nav>
-                <FaPlus className='fa-plus disp-plus-icon' onClick={()=>setPortal("Add")}/>
-            </nav> */}
+        <div className='disp-main'>
+            <div className='fix-it'>
+                TODOS
+            </div>
+            <div className='disp-left-container'>
+                {data.map((rec,idx) => {
+                    return (
+                        <Used props={[rec, idx, data, setData, setIndex, setPortal]} key={idx}/>
+                    )
+                })}
+            </div>
         </div>
     )
 }

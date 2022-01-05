@@ -1,19 +1,16 @@
 .disp-container {
     position: relative;
     /* background-color: whitesmoke; */
-    background-color: black;
+    background-color: white;
     width: calc(7vh + 56vw);
     min-width: 320px;
     height: 630px;
     max-height: 630px;
-    border-radius: 14px;
-    border: 2px solid black;
-    padding: 10px;
+    /* border: 2px solid black; */
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    opacity: 0.8;
 }
 
 .disp-container::-webkit-scrollbar {
@@ -21,8 +18,10 @@
 }
 
 .disp-item {
+    display: flex;
+    flex-direction: column;
     /* background-color: rgb(245, 245, 244); */
-    /* background-color: white; */
+    background-color: rgb(63, 61, 61);
     text-align: left;
     padding: 10px;
     border: 2px solid whitesmoke;
@@ -34,17 +33,18 @@
     border-radius: 14px;
 }
 
-p {
+.severity p, .expire-on p {
     margin: 0px;
     padding: 0px;
-    font-size: 14px;
+    font-size: 25px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.9);
+    color: whitesmoke;
 }
 
 .update-icons {
     padding: 0px;
     margin: 0px;
+    float: right;
 }
 
 .inp-todo {
@@ -88,7 +88,8 @@ span.expire-on {
 }
 
 .description-area {
-    /* min-width: 300px; */
+    min-width: 300px;
+    width: auto;
     min-height: 210px;
     height: calc(7vh + 7vw);
 }

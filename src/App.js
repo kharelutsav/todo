@@ -13,45 +13,43 @@ function App() {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
-      localStorage.setItem('add', JSON.stringify(data))
+    localStorage.setItem('add', JSON.stringify(data))
   })
 
   const fetchData = () => {
-      if (!localStorage.getItem('add')){
-          localStorage.setItem('add', JSON.stringify([]))
-      }
+    if (!localStorage.getItem('add')){
+      localStorage.setItem('add', JSON.stringify([]))
+    }
   }
 
   window.addEventListener('load', ()=>{
-      fetchData()
+    fetchData()
   })
 
   return (
     <div className="App" id="App">
-      <div className='Body'>
-            {data.length !== 0 && <Display state={[data, setData, setPortal]} indexs={setIndex}/>}
-            {
-            portal==="Display" && 
-            ReactDOM.createPortal(
-                <States state={setPortal}/>,
-                document.getElementById("root1")
-                )
-            }
-            {
-            portal==="Add" && 
-            ReactDOM.createPortal(
-                <Add state={[setData, setPortal]}/>,
-                document.getElementById("root1")
-                )
-            }
-            {
-            portal==="Update" && 
-            ReactDOM.createPortal(
-                <Update state={[data, setData, setPortal, data.length]} indexs={[index, setIndex]}/>,
-                document.getElementById("root1")
-                )
-            }
-        </div>
+      {data.length !== 0 && <Display state={[data, setData, setPortal]} indexs={setIndex}/>}
+      {
+      portal==="Display" && 
+      ReactDOM.createPortal(
+        <States state={setPortal}/>,
+        document.getElementById("root1")
+        )
+      }
+      {
+      portal==="Add" && 
+      ReactDOM.createPortal(
+        <Add state={[setData, setPortal]}/>,
+        document.getElementById("root1")
+        )
+      }
+      {
+      portal==="Update" && 
+      ReactDOM.createPortal(
+        <Update state={[data, setData, setPortal, data.length]} indexs={[index, setIndex]}/>,
+        document.getElementById("root1")
+        )
+      }
     </div>
   );
 }

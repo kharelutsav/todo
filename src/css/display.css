@@ -1,19 +1,16 @@
 .disp-left-container {
     position: relative;
-    /* background-color: whitesmoke; */
-    background-color: black;
+    background-color: whitesmoke;
+    margin-right: 0px;
     min-width: 340px;
     min-width: 340px;
     height: 630px;
     max-height: 630px;
-    border-radius: 14px;
-    border: 2px solid black;
-    padding: 7px;
+    /* border: 2px solid black; */
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-width: none;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    opacity: 0.8;
 }
 
 .disp-left-container::-webkit-scrollbar {
@@ -21,15 +18,12 @@
 }
 
 .disp-left-item {
-    /* background-color: rgb(245, 245, 244); */
-    position: relative;
-    /* background-color: white; */
+    background-color: rgb(63, 61, 61);
     text-align: left;
-    padding: 7px;
-    border: 0.1px solid rgb(58, 57, 57);
-    /* box-shadow: 0 2px 4px 0 rgb(63, 61, 61); */
+    padding: 14px;
     margin: 7px;
-    border-radius: 14px;
+
+    /* box-shadow: 0 2px 4px 0 rgb(63, 61, 61); */
 }
 
 hr {
@@ -40,7 +34,7 @@ hr {
 .disp-left-item-hover:hover {
     /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 1); */
     box-shadow: 0 4px 8px 0 rgb(63, 61, 61);
-    border: 2px solid white;
+    border: 2px solid black;
 }
 
 p {
