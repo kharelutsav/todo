@@ -27,7 +27,7 @@ function Add(props) {
     return (
         <div className='disp-main'>
             <div className='fix-it'>
-                <span>TODOS</span>
+                <span style={{textTransform: "capitalize"}}>{input.length >= 28 ? input.slice(0, 28)+"..." : input || "Write...."}</span>
                 <div className='add-icons update-icons'>
                     <span>
                         <ImCross className='fa-plus icons' onClick={()=>setPortal('Display')}/>
@@ -41,18 +41,6 @@ function Add(props) {
                 </div>
             </div>
             <div className='disp-container'>
-                {/* <div className='add-icons update-icons'>
-                    <span>
-                        <ImCross className='fa-plus icons' onClick={()=>setPortal('Display')}/>
-                    </span>
-                    <span>
-                        <FaExclamation className='fa-plus icons'/>
-                    </span>
-                    <span>
-                        <FaPlus className='fa-plus icons' onClick={addData}/>
-                    </span>
-                </div> */}
-
                 <div className= 'disp-item'>
                     <input placeholder='Enter a new todo.' value={input} onInput={e => setInput(e.target.value)} className='inp-todo'/>
                     <span className='severity'>
@@ -88,7 +76,6 @@ function Add(props) {
                             }}/>
                     </span>
                 </div>
-
                 <div className='disp-item'>
                     <textarea className='description-area' value={desc} onChange={e => setDesc(e.target.value)} placeholder='Descriptions of your task....'></textarea>
                 </div>

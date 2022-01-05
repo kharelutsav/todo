@@ -42,8 +42,8 @@ function Update(props) {
     }
     return (
         <div className='disp-main'>
-            <div className='fix-it'>
-                <span>TODOS</span>
+            <div className='fix-it'> 
+                <span style={{textTransform: "capitalize"}}>{data[index][0].length >= 28 ? data[index][0].slice(0, 28) + "..." : data[index][0]}</span>
                 <div className='add-icons update-icons'>
                     <span>
                         <GrUpdate className='fa-plus icons' onClick={updateData}/>
