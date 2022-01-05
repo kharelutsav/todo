@@ -1,7 +1,7 @@
 import '../css/add_update.css';
 import '../css/update.css';
 import '../css/all.css';
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaExclamation } from 'react-icons/fa'
 import { FiPlus, FiMinus } from 'react-icons/fi'
 import { FcNext, FcPrevious } from 'react-icons/fc'
