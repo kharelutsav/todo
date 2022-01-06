@@ -38,7 +38,6 @@ body {
 #root0 {
   padding: calc(0.5vh + 0.5vw);
   margin: 0px;
-  padding: 0px;
   height: 630px;
   min-height: 630px;
   width: fit-content;
@@ -47,7 +46,6 @@ body {
 #root1 {
   padding: calc(0.5vh + 0.5vw);
   margin: 0px;
-  padding: 0px;
   min-width: 700px;
   height: 630px;
   min-height: 630px;

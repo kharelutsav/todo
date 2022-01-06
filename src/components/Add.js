@@ -25,7 +25,7 @@ function Add(props) {
         // setInput('')
     }
     return (
-        <div className='disp-main'>
+        <div className='disp-main' id='disp'>
             <div className='fix-it'>
                 <span style={{textTransform: "capitalize"}}>{input.length >= 28 ? input.slice(0, 28)+"..." : input || "Write...."}</span>
                 <div className='add-icons update-icons'>
